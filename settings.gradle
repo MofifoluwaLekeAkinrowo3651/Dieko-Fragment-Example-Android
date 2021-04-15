@@ -1,2 +1,2 @@
-include ':app'
+include ':DiekoAssign44'
 rootProject.name = "DiekoAssign4"
