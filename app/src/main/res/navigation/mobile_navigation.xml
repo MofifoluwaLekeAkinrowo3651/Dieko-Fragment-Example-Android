@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="dieko.akinrowo.diekoassign4.ui.home.HomeFrag"
+        android:name="dieko.akinrowo.diekoassign4.ui.HomeFrag.HomeFrag"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="dieko.akinrowo.diekoassign4.ui.gallery.DownloadFrag"
+        android:id="@+id/nav_download"
+        android:name="dieko.akinrowo.diekoassign4.ui.DownloadFrag.DownloadFrag"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_download" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="dieko.akinrowo.diekoassign4.ui.slideshow.WebServiceFrag"
+        android:id="@+id/nav_web_service"
+        android:name="dieko.akinrowo.diekoassign4.ui.WebServiceFrag.WebServiceFrag"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_web_service" />
 </navigation>

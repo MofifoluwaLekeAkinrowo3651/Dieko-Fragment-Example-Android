@@ -1,4 +1,4 @@
-package dieko.akinrowo.diekoassign4.ui.slideshow;
+package dieko.akinrowo.diekoassign4.ui.WebServiceFrag;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,20 +16,10 @@ import dieko.akinrowo.diekoassign4.R;
 
 public class WebServiceFrag extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                new ViewModelProvider(this).get(SlideshowViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
-        final TextView textView = root.findViewById(R.id.text_slideshow);
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        View root = inflater.inflate(R.layout.fragment_web_service, container, false);
+
         return root;
     }
 }
