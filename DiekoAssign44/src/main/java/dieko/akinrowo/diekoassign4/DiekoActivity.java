@@ -1,39 +1,25 @@
 package dieko.akinrowo.diekoassign4;
 
 import android.Manifest;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
-public class MainActivity extends AppCompatActivity {
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
+
+public class DiekoActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private static final int REQUEST_LOCATION = 1;
@@ -73,7 +59,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        getLocation();
+        switch (item.getItemId()) {
+            case R.id.display_location:
+            getLocation();
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -87,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void getLocation(){
-        GPSTracker gpsTracker = new GPSTracker(MainActivity.this);
+        GPSTracker gpsTracker = new GPSTracker(DiekoActivity.this);
 
         if(gpsTracker.canGetLocation()){
             double latitude = gpsTracker.getLatitude();
@@ -95,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
             View view = findViewById(R.id.display_location);
             String message = "Latitude: " + latitude + "\n" + "Longitude: " + longitude;
-            int duration = Snackbar.LENGTH_LONG;
+            int duration = Snackbar.LENGTH_SHORT;
 
             Snackbar.make(view, message, duration).show();
 
