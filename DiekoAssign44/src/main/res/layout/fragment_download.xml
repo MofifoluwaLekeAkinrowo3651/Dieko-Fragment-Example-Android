@@ -4,7 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.DownloadFrag.DownloadFrag"
-    android:background="@color/light_purple">
+    android:background="@color/light_purple"
+    tools:context=".ui.DownloadFrag.DownloadFrag">
 
+    <Spinner
+        android:id="@+id/dieko_spinner"
+        android:layout_width="409dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="84dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/diekobtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="144dp"
+        android:layout_marginBottom="492dp"
+        android:backgroundTint="@color/green"
+        android:text="@string/download"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/Diekoimg"
+        android:layout_width="367dp"
+        android:layout_height="354dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="92dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv2Dieko"
+        style="@style/TextAppearance.AppCompat.Button"
+        android:layout_width="340dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/pick"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

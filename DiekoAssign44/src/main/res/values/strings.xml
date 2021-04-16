@@ -10,4 +10,8 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Download</string>
     <string name="menu_slideshow">Web Service</string>
+    <string name="fullname">Dieko Akinrowo</string>
+    <string name="studentid">N01343651</string>
+    <string name="download">Download</string>
+    <string name="pick">Pick an image to download:</string>
 </resources>
