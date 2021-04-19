@@ -1,12 +1,6 @@
 //Dieko Akinrowo N01343651 Section D
 package dieko.akinrowo.diekoassign4.ui.HomeFrag;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ComposeShader;
-import android.graphics.RadialGradient;
-import android.graphics.SweepGradient;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,7 +21,6 @@ public class HomeFrag extends Fragment {
     Calendar calendar;
     SimpleDateFormat format;
     String _date;
-
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
