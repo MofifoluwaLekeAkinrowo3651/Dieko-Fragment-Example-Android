@@ -52,35 +52,24 @@ public class WebServiceFrag extends Fragment {
             @Override
             public void onClick(View v) {
 
+            if (zip != "" && zip.length() == 5) {
                 zip = zipcode.getText().toString();
                 String url = "https://api.openweathermap.org/data/2.5/weather?";
-                url+="zip="+zip;
-                url+=",US";
-                url+="&appid=0b014c03b8d86401a294d8644195a145";
-                Log.d("URL",url);
+                url += "zip=" + zip;
+                url += ",US";
+                url += "&appid=0b014c03b8d86401a294d8644195a145";
+                Log.d("URL", url);
                 new ReadJSONFeedTask().execute(url);
+            } else {
 
+
+
+            }
             }
         });
 
         return root;
     }
-
-//    public void getWeather(View view)
-//    {
-//        zipcode = (EditText) view.findViewById(R.id.dieko_zip);
-//        String zip = zipcode.getText().toString();
-//
-//        String url = "https://api.openweathermap.org/data/2.5/weather?";
-////        zip={zip code},{country code}&appid={API key};
-//
-//        url+="zip="+zip;
-//        url+=",US";
-//        url+="&appid=0b014c03b8d86401a294d8644195a145";
-//        Log.d("URL",url);
-//        new ReadJSONFeedTask().execute(url);
-//
-//    }
 
     public String readJSONFeed(String address) {
         URL url = null;
