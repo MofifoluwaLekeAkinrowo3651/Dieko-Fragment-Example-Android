@@ -50,30 +50,27 @@ public class WebServiceFrag extends Fragment {
         Button button = (Button) root.findViewById(R.id.button);
         zipcode = (EditText) root.findViewById(R.id.dieko_zip);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        button.setOnClickListener(v -> {
 
-            zip = zipcode.getText().toString();
+        zip = zipcode.getText().toString();
 
-            if (zip != "" && zip.length() == 5) {
+        if (!zip.equals("") && zip.length() == 5) {
 
-                String url = "https://api.openweathermap.org/data/2.5/weather?";
-                url += "zip=" + zip;
-                url += ",US";
-                url += "&appid=0b014c03b8d86401a294d8644195a145";
-                Log.d("URL", url);
-                new ReadJSONFeedTask().execute(url);
+            String url = "https://api.openweathermap.org/data/2.5/weather?";
+            url += "zip=" + zip;
+            url += ",US";
+            url += "&appid=0b014c03b8d86401a294d8644195a145";
+            Log.d("URL", url);
+            new ReadJSONFeedTask().execute(url);
 
-            } else {
+        } else {
 
-                builder = new AlertDialog.Builder(getContext());
-                builder.setMessage(R.string.dialog_message) .setTitle(R.string.dialog_title);
-                AlertDialog alert = builder.create();
-                alert.show();
+            builder = new AlertDialog.Builder(getContext());
+            builder.setMessage(R.string.dialog_message) .setTitle(R.string.dialog_title);
+            AlertDialog alert = builder.create();
+            alert.show();
 
-            }
-            }
+        }
         });
 
         return root;
@@ -85,7 +82,7 @@ public class WebServiceFrag extends Fragment {
             url = new URL(address);
         } catch (MalformedURLException e) {
             e.printStackTrace();
-        };
+        }
         StringBuilder stringBuilder = new StringBuilder();
         HttpURLConnection urlConnection = null;
         try {
