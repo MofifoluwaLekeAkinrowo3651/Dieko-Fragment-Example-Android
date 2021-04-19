@@ -1,6 +1,7 @@
 //Dieko Akinrowo N01343651 Section D
 package dieko.akinrowo.diekoassign4.ui.WebServiceFrag;
 
+import android.app.AlertDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -36,6 +37,7 @@ public class WebServiceFrag extends Fragment {
     TextView display;
     EditText zipcode;
     String zip;
+    AlertDialog.Builder builder;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -52,17 +54,23 @@ public class WebServiceFrag extends Fragment {
             @Override
             public void onClick(View v) {
 
+            zip = zipcode.getText().toString();
+
             if (zip != "" && zip.length() == 5) {
-                zip = zipcode.getText().toString();
+
                 String url = "https://api.openweathermap.org/data/2.5/weather?";
                 url += "zip=" + zip;
                 url += ",US";
                 url += "&appid=0b014c03b8d86401a294d8644195a145";
                 Log.d("URL", url);
                 new ReadJSONFeedTask().execute(url);
+
             } else {
 
-
+                builder = new AlertDialog.Builder(getContext());
+                builder.setMessage(R.string.dialog_message) .setTitle(R.string.dialog_title);
+                AlertDialog alert = builder.create();
+                alert.show();
 
             }
             }

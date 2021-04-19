@@ -17,4 +17,6 @@
     <string name="web_service_fragment">Web Service Fragment</string>
     <string name="enter_zip_code">Enter ZIP code</string>
     <string name="web_services">Web Services</string>
+    <string name="dialog_message">Invalid Input</string>
+    <string name="dialog_title">Error</string>
 </resources>
