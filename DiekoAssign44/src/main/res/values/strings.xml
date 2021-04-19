@@ -14,4 +14,7 @@
     <string name="studentid">N01343651</string>
     <string name="download">Download</string>
     <string name="pick">Pick an image to download:</string>
+    <string name="web_service_fragment">Web Service Fragment</string>
+    <string name="enter_zip_code">Enter ZIP code</string>
+    <string name="web_services">Web Services</string>
 </resources>
