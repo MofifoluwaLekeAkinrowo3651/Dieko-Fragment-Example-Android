@@ -1,4 +1,4 @@
-# Dieko Assignment 4
+# Dieko Practice 4
 
 Project with 3 fragments - HomeFrag, DownloadFrag, and WebServiceFrag
 
